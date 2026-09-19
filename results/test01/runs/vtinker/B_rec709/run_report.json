@@ -1,0 +1,123 @@
+{
+ "input": "$MVFI_ROOT/input/test01_rec709",
+ "input_files_used": 41,
+ "input_stride": 1,
+ "source_dtype": "uint16",
+ "width": 3840,
+ "height": 2160,
+ "model_input_frames": 41,
+ "temporal_sf": 10,
+ "output_frames": 401,
+ "input_duration_s_at_fps": 1.64,
+ "output_duration_s_at_fps": 16.04,
+ "expansion_factor": 9.78048780487805,
+ "fps": 25.0,
+ "paste_originals": true,
+ "holdout_psnr_db_mean": null,
+ "timing_s": {
+  "model_load": 1.3374199867248535,
+  "generation_and_write": 947.8483271598816,
+  "total": 949.2118661403656,
+  "sec_per_pair_mean": 22.499351179599763,
+  "sec_per_output_frame": 2.363711539052074
+ },
+ "gpu": {
+  "name": "NVIDIA A100 80GB PCIe",
+  "max_memory_allocated_gib": 25.945205211639404,
+  "max_memory_reserved_gib": 30.787109375
+ },
+ "software": {
+  "python": "3.10.14",
+  "torch": "2.4.1+cu121",
+  "torch_cuda": "12.1",
+  "harness_sha256": "65045e37d7df8b690b3b883cc7b8b15ff8cedfd0ed9adf27b798d284c945420d"
+ },
+ "model": {
+  "adapter": "$MVFI_ROOT/scripts/adapters/vtinker.py",
+  "adapter_sha256": "97e99b03ce4e6ba6f1bdf1ab8a463367002cb9b2d77b767bfce2be090d5a5a32",
+  "adapter_args": {},
+  "name": "VTinker",
+  "paper": "Wu, Fu, Guo, Han, Li. VTinker: Guided Flow Upsampling and Texture Mapping for High-Resolution Video Frame Interpolation. AAAI 2026 (arXiv 2511.16124)",
+  "repo_url": "https://github.com/Wucy0519/VTinker",
+  "repo_path": "$MVFI_ROOT/src/VTinker",
+  "repo_commit": "6688e06338e39b43764ef90455d4430fbaa563b4",
+  "repo_commit_matches_pinned": true,
+  "model_file": "core/models/VTinker.py (is_half=False, fp32)",
+  "weights": [
+   {
+    "file": "$MVFI_ROOT/models/VTinker/VTinker.pkl",
+    "url": "https://huggingface.co/wcy1234567/VTinker/resolve/f9f0f47e6fb5d35e73f38547e6a45521e41f0777/VTinker.pkl",
+    "sha256": "8ed128023af03332e8c2915b9b735aaff5c70667c054e0237ed032c47c43aa17",
+    "sha256_verified_at_load": true,
+    "bytes": 242743383,
+    "checkpoint_dtypes": [
+     "torch.float32"
+    ],
+    "checkpoint_unused_keys": []
+   }
+  ],
+  "settings": {
+   "precision": "float32",
+   "allow_tf32": false,
+   "cudnn_benchmark": false,
+   "cache_flow": true,
+   "pad_mode": "replicate",
+   "pad_value": null,
+   "pad_note": "upstream pads constant 0.5; replicate avoids the warped pad bleeding into the last delivered row(s)",
+   "clamp": true,
+   "channel_order": "rgb",
+   "time_use": "flow_0t = F01*t, flow_1t = F10*(1-t) (linear); synthesis net has no t input; trained at t=0.5 only",
+   "time_holdout_evidence": "vs real frames on input/synthetic4k (job 319409): PSNR gain over a cross-dissolve +2.15 dB at t=0.5 (gap 2), +0.80/+0.83 dB at t=1/3, 2/3 (gap 3). The full t=0.1..0.9 curve needs a real >=31-frame shot: SF=10 STRIDE=10 via run_vtinker.sbatch",
+   "flow_deep": 5,
+   "skip_num": 1,
+   "pad_divisor": 128,
+   "padded_hw": [
+    2176,
+    3840
+   ],
+   "input_hw": [
+    2160,
+    3840
+   ],
+   "pad_rows_added": 16,
+   "pad_cols_added": 0
+  },
+  "versions": {
+   "cupy": "12.3.0",
+   "nvrtc": "12.1",
+   "torch": "2.4.1+cu121",
+   "torch_cuda": "12.1",
+   "cudnn": 90100
+  },
+  "stats": {
+   "pairs": 40,
+   "frames": 360,
+   "raw_min": -0.23512396216392517,
+   "raw_max": 1.2976962327957153,
+   "clipped_fraction_max": 0.08467576652765274,
+   "nonfinite_values": 0,
+   "flow_abs_max_px": 534.538330078125,
+   "flow_s": 8.334520101547241,
+   "synth_s": 891.6138925552368
+  },
+  "license": "code: Pi-Lab License 1.0 (non-commercial; src/VTinker/LICENSE), borrows UPR-Net (CC BY-NC-ND 4.0), PerVFI (Apache-2.0), softsplat (academic use only). Weights: HF model card says MIT (models/VTinker/HF_README.md) but they derive from the non-commercial code -> treat as non-commercial research use only."
+ },
+ "settings": {
+  "adapter": "$MVFI_ROOT/scripts/adapters/vtinker.py",
+  "input": "$MVFI_ROOT/input/test01_rec709",
+  "out_dir": "$MVFI_ROOT/output/test01/vtinker/B_rec709",
+  "temporal_sf": 10,
+  "fps": 25.0,
+  "input_stride": 1,
+  "max_input_frames": null,
+  "adapter_arg": [],
+  "write_workers": 8,
+  "cpu": false
+ },
+ "slurm": {
+  "SLURM_JOB_ID": "319421",
+  "SLURM_JOB_NODELIST": "ngpu02",
+  "CUDA_VISIBLE_DEVICES": "0"
+ },
+ "output_dir": "$MVFI_ROOT/output/test01/vtinker/B_rec709"
+}

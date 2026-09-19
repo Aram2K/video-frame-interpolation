@@ -1,0 +1,18 @@
+# Allow-list: only code, docs, provenance and metrics are versioned.
+# Footage (input/), frames and previews (output/, delivery*/), weights (models/),
+# environments (env/), caches and Slurm logs are deliberately excluded.
+/*
+!/README.md
+!/config.example.sh
+!/.gitignore
+!/.gitmodules
+!/scripts/
+/scripts/cleanup_all.sh
+!/logs/
+/logs/*
+!/logs/.gitkeep
+!/provenance/
+!/results/
+!/src/
+__pycache__/
+*.pyc

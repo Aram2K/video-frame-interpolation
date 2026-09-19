@@ -1,0 +1,14 @@
+input_dir            $MVFI_ROOT/input/test01
+frames N             41  (test00090045.tif .. test00090085.tif)
+frame numbers        [90045, 90085]  gaps=none
+geometry             3840x2160  channels=3  extrasamples=[]
+bit depth / dtype    16 / uint16  sampleformat=UINT  compression=NONE  planar=CONTIG
+16-bit precision     low byte used in frame 0: True; distinct levels frame 0: {'R': 36694, 'G': 31540, 'B': 32615}
+value percentiles    p0.1=0.000, p1=0.000, p5=0.000, p50=0.108, p95=0.250, p99=0.325, p99.9=0.574
+min/max code         0 / 49170  (max frac at 0: 6.20e-02, at max: 0.00e+00)
+duplicates           exact=0 near=0
+possible cuts        none
+input duration       41 / 25 = 1.640 s
+expected output      (N-1)*10+1 = 401 frames = 16.040 s @ 25 fps  (x9.780)
+PROBLEMS             none
+WARNINGS             none

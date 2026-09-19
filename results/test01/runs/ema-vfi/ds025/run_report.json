@@ -1,0 +1,103 @@
+{
+ "input": "$MVFI_ROOT/input/test01",
+ "input_files_used": 41,
+ "input_stride": 1,
+ "source_dtype": "uint16",
+ "width": 3840,
+ "height": 2160,
+ "model_input_frames": 41,
+ "temporal_sf": 10,
+ "output_frames": 401,
+ "input_duration_s_at_fps": 1.64,
+ "output_duration_s_at_fps": 16.04,
+ "expansion_factor": 9.78048780487805,
+ "fps": 25.0,
+ "paste_originals": true,
+ "holdout_psnr_db_mean": null,
+ "timing_s": {
+  "model_load": 2.855844736099243,
+  "generation_and_write": 502.8068413734436,
+  "total": 506.0238242149353,
+  "sec_per_pair_mean": 11.176427936553955,
+  "sec_per_output_frame": 1.253882397440009
+ },
+ "gpu": {
+  "name": "NVIDIA A100 80GB PCIe",
+  "max_memory_allocated_gib": 21.066675186157227,
+  "max_memory_reserved_gib": 27.173828125
+ },
+ "software": {
+  "python": "3.10.14",
+  "torch": "2.5.1+cu121",
+  "torch_cuda": "12.1",
+  "harness_sha256": "65045e37d7df8b690b3b883cc7b8b15ff8cedfd0ed9adf27b798d284c945420d"
+ },
+ "model": {
+  "adapter": "$MVFI_ROOT/scripts/adapters/emavfi.py",
+  "adapter_sha256": "c1a556cd935bd83d999b5a465ae86a3e884da41a082e16fe1d09e27ccccef176",
+  "adapter_args": {
+   "down_scale": 0.25
+  },
+  "name": "EMA-VFI",
+  "paper": "Zhang et al., Extracting Motion and Appearance via Inter-Frame Attention for Efficient Video Frame Interpolation, CVPR 2023 (arXiv 2303.00440)",
+  "repo_url": "https://github.com/MCG-NJU/EMA-VFI",
+  "repo_path": "$MVFI_ROOT/src/EMA-VFI",
+  "repo_commit": "75b6f6a889e695df875e103374040d47a4cfac7c",
+  "repo_commit_expected": "75b6f6a889e695df875e103374040d47a4cfac7c",
+  "upstream_files_modified": false,
+  "checkpoint": "ours_t",
+  "weights": [
+   {
+    "file": "$MVFI_ROOT/models/EMA-VFI/ours_t.pkl",
+    "bytes": 263760209,
+    "sha256": "c09e82d193e303d7b91f1e36bf535886b820cb56105574355211d60a6b557a99",
+    "url": "https://drive.google.com/uc?export=download&id=1mL4ht5DYFMA1CYiGDFbej-ufh5QoqfwN",
+    "source_url_used": "https://drive.usercontent.google.com/download?id=1mL4ht5DYFMA1CYiGDFbej-ufh5QoqfwN&export=download&confirm=t"
+   }
+  ],
+  "n_params": 65662359,
+  "settings": {
+   "model": "ours_t",
+   "down_scale": 0.25,
+   "tta": true,
+   "fast_tta": false,
+   "channel_order": "bgr",
+   "refine": true,
+   "tf32": false,
+   "cudnn_benchmark": false,
+   "pad_divisor": 128,
+   "pad_mode": "replicate (upstream InputPadder)",
+   "inference_call": "Trainer.Model.multi_inference (one call per pair, all t)"
+  },
+  "precision": "float32 end to end (TF32 disabled in cuDNN and cuBLAS); no autocast/half; no uint8 or *255 round trip",
+  "output_stats": {
+   "pairs": 40,
+   "frames": 360,
+   "nonfinite_values": 0,
+   "raw_min": 0.0,
+   "raw_max": 0.7683945894241333
+  },
+  "timm": "0.6.13",
+  "license": "code: Apache-2.0 (src/EMA-VFI/LICENSE; README asks to also respect RIFE, PVT, IFRNet, Swin, HRFormer licences). weights: no separate licence stated (project-level Apache-2.0 presumed); trained on Vimeo90K (research terms)."
+ },
+ "settings": {
+  "adapter": "$MVFI_ROOT/scripts/adapters/emavfi.py",
+  "input": "$MVFI_ROOT/input/test01",
+  "out_dir": "$MVFI_ROOT/output/test01/ema-vfi/ds025",
+  "temporal_sf": 10,
+  "fps": 25.0,
+  "input_stride": 1,
+  "max_input_frames": null,
+  "adapter_arg": [
+   "down_scale=0.25"
+  ],
+  "write_workers": 8,
+  "cpu": false
+ },
+ "slurm": {
+  "SLURM_JOB_ID": "319414",
+  "SLURM_JOB_NODELIST": "ngpu02",
+  "CUDA_VISIBLE_DEVICES": "0"
+ },
+ "output_dir": "$MVFI_ROOT/output/test01/ema-vfi/ds025"
+}

@@ -1,0 +1,104 @@
+--- generate.py:sample_skip_concat
++++ sample_skip_concat_float
+@@ -1,8 +1,8 @@
+-def sample_skip_concat(
++def sample_skip_concat_float(
+     lq_reader, # TCHW, uint8 tensor
+     model: Precond, train_num_frames=60, tile_min_t=20, temporal_upsample="nearest",
+     spatial_sf=1, temporal_sf=4, nT_cond=1, num_steps=10, t_cond=0.1, t_shift=1.0, # sampling hparams
+-    device='cuda', weight_dtype=torch.bfloat16, verbose=True, pbar_name: str | None = None,
++    device='cuda', weight_dtype=torch.bfloat16, vae_dtype=torch.bfloat16, verbose=True, pbar_name: str | None = None,
+ ):  
+     H, W = lq_reader[0].shape[1], lq_reader[0].shape[2]
+     nT = train_num_frames // tile_min_t
+@@ -32,9 +32,9 @@
+ 
+     msk = F.pad(msk, (0, train_num_frames - len(msk)))
+     lq = upsample_temporal(lq, msk, mode=temporal_upsample) 
+-    lq = rearrange(lq, 't c h w -> 1 c t h w').to(device=device, dtype=weight_dtype).div(127.5).sub(1)
++    lq = rearrange(lq, 't c h w -> 1 c t h w').to(device=device, dtype=vae_dtype).div(127.5).sub(1)
+     msk = repeat(msk, 't -> 1 1 t h w', h=lq.shape[-2], w=lq.shape[-1]).to(device=device, dtype=weight_dtype)
+-    y = model.lq_encoder.encode(lq, for_train=True)
++    y = model.lq_encoder.encode(lq, for_train=True).to(weight_dtype)
+     m = model.msk_encoder.encode(msk, for_train=True)
+     xt = torch.randn_like(y)
+     
+@@ -53,8 +53,8 @@
+     xt = rearrange(xt, '1 nt nh nw c t h w -> 1 nt c t (nh h) (nw w)')
+     lq = lq[:, :, :(nT - nT_cond) * tile_min_t]
+     msk = msk[:, :, :(nT - nT_cond) * tile_min_t]
+-    pred = vae_decode(model.vae, xt, lq=lq, msk=msk)[..., :H, :W]   
+-    output_pred = rearrange(pred, '1 c t h w -> t c h w').add(1).mul(127.5).clip(0, 255).byte()
++    pred = vae_decode(model.vae, xt.to(vae_dtype), lq=lq, msk=msk)[..., :H, :W]   
++    output_pred = rearrange(pred, '1 c t h w -> t c h w').float().add(1).mul(127.5)
+     
+     yield output_lq, output_pred
+ 
+@@ -85,9 +85,9 @@
+ 
+         msk = F.pad(msk, (0, train_num_frames - len(msk)))
+         lq = upsample_temporal(lq, msk, mode=temporal_upsample)  
+-        lq = rearrange(lq, 't c h w -> 1 c t h w').to(device=device, dtype=weight_dtype).div(127.5).sub(1)
++        lq = rearrange(lq, 't c h w -> 1 c t h w').to(device=device, dtype=vae_dtype).div(127.5).sub(1)
+         msk = repeat(msk, 't -> 1 1 t h w', h=lq.shape[-2], w=lq.shape[-1]).to(device=device, dtype=weight_dtype)
+-        y = model.lq_encoder.encode(lq, for_train=True)
++        y = model.lq_encoder.encode(lq, for_train=True).to(weight_dtype)
+         m = model.msk_encoder.encode(msk, for_train=True)
+         xt = torch.randn_like(y)
+ 
+@@ -107,8 +107,8 @@
+         xt = rearrange(xt, '1 nt nh nw c t h w -> 1 nt c t (nh h) (nw w)')
+         lq = lq[:, :, nT_cond * tile_min_t : (nT - nT_cond) * tile_min_t]
+         msk = msk[:, :, nT_cond * tile_min_t : (nT - nT_cond) * tile_min_t]
+-        pred = vae_decode(model.vae, xt, lq=lq, msk=msk)[..., :H, :W]   
+-        output_pred_skip = rearrange(pred, '1 c t h w -> t c h w').add(1).mul(127.5).clip(0, 255).byte()
++        pred = vae_decode(model.vae, xt.to(vae_dtype), lq=lq, msk=msk)[..., :H, :W]   
++        output_pred_skip = rearrange(pred, '1 c t h w -> t c h w').float().add(1).mul(127.5)
+ 
+         # ------------------------------------------
+         # The concatenate chunk.
+@@ -131,9 +131,9 @@
+ 
+         msk = F.pad(msk, (0, train_num_frames - len(msk)))
+         lq = upsample_temporal(lq, msk, mode=temporal_upsample)  
+-        lq = rearrange(lq, 't c h w -> 1 c t h w').to(device=device, dtype=weight_dtype).div(127.5).sub(1)
++        lq = rearrange(lq, 't c h w -> 1 c t h w').to(device=device, dtype=vae_dtype).div(127.5).sub(1)
+         msk = repeat(msk, 't -> 1 1 t h w', h=lq.shape[-2], w=lq.shape[-1]).to(device=device, dtype=weight_dtype)
+-        y = model.lq_encoder.encode(lq, for_train=True)
++        y = model.lq_encoder.encode(lq, for_train=True).to(weight_dtype)
+         m = model.msk_encoder.encode(msk, for_train=True)
+         
+         xt_cat = torch.randn_like(y[:, nT_cond : nT - nT_cond])
+@@ -157,8 +157,8 @@
+         xt = rearrange(xt, '1 nt nh nw c t h w -> 1 nt c t (nh h) (nw w)')
+         lq = lq[:, :, nT_cond * tile_min_t : (nT - nT_cond) * tile_min_t]
+         msk = msk[:, :, nT_cond * tile_min_t : (nT - nT_cond) * tile_min_t]
+-        pred = vae_decode(model.vae, xt, lq=lq, msk=msk)[..., :H, :W] 
+-        output_pred_cat = rearrange(pred, '1 c t h w -> t c h w').add(1).mul(127.5).clip(0, 255).byte()
++        pred = vae_decode(model.vae, xt.to(vae_dtype), lq=lq, msk=msk)[..., :H, :W] 
++        output_pred_cat = rearrange(pred, '1 c t h w -> t c h w').float().add(1).mul(127.5)
+ 
+         yield output_lq_cat, output_pred_cat
+         yield output_lq_skip, output_pred_skip
+@@ -180,9 +180,9 @@
+         
+         msk = F.pad(msk, (0, train_num_frames - len(msk)))
+         lq = upsample_temporal(lq, msk, mode=temporal_upsample)
+-        lq = rearrange(lq, 't c h w -> 1 c t h w').to(device=device, dtype=weight_dtype).div(127.5).sub(1)
++        lq = rearrange(lq, 't c h w -> 1 c t h w').to(device=device, dtype=vae_dtype).div(127.5).sub(1)
+         msk_t = repeat(msk, 't -> 1 1 t h w', h=lq.shape[-2], w=lq.shape[-1]).to(device=device, dtype=weight_dtype)
+-        y = model.lq_encoder.encode(lq, for_train=True)
++        y = model.lq_encoder.encode(lq, for_train=True).to(weight_dtype)
+         m = model.msk_encoder.encode(msk_t, for_train=True)
+ 
+         xt_prev = x0_prev * (1 - t_cond) + torch.randn_like(x0_prev) * t_cond
+@@ -202,7 +202,7 @@
+         # VAE decode.
+         lq_dec = lq[:, :, nT_cond * tile_min_t:]
+         msk_dec = msk_t[:, :, nT_cond * tile_min_t:]
+-        pred_tail = vae_decode(model.vae, xt, lq=lq_dec, msk=msk_dec)[..., :H, :W]
+-        pred_tail = rearrange(pred_tail, '1 c t h w -> t c h w').add(1).mul(127.5).clip(0, 255).byte()
++        pred_tail = vae_decode(model.vae, xt.to(vae_dtype), lq=lq_dec, msk=msk_dec)[..., :H, :W]
++        pred_tail = rearrange(pred_tail, '1 c t h w -> t c h w').float().add(1).mul(127.5)
+ 
+         yield output_lq_tail, pred_tail

@@ -1,0 +1,15 @@
+[submodule "src/LDF-VFI"]
+	path = src/LDF-VFI
+	url = https://github.com/xypeng9903/LDF-VFI.git
+[submodule "src/BiM-VFI"]
+	path = src/BiM-VFI
+	url = https://github.com/KAIST-VICLab/BiM-VFI.git
+[submodule "src/GIMM-VFI"]
+	path = src/GIMM-VFI
+	url = https://github.com/GSeanCDAT/GIMM-VFI.git
+[submodule "src/EMA-VFI"]
+	path = src/EMA-VFI
+	url = https://github.com/MCG-NJU/EMA-VFI.git
+[submodule "src/VTinker"]
+	path = src/VTinker
+	url = https://github.com/Wucy0519/VTinker.git

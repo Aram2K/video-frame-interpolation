@@ -1,0 +1,402 @@
+out_index,time_s,kind,t_frac,prev_src,next_src,final_pixels
+0,0.0,genuine,0.0,test00090045.tif,test00090046.tif,original source (bit-exact)
+1,0.04,generated,0.1,test00090045.tif,test00090046.tif,model
+2,0.08,generated,0.2,test00090045.tif,test00090046.tif,model
+3,0.12,generated,0.3,test00090045.tif,test00090046.tif,model
+4,0.16,generated,0.4,test00090045.tif,test00090046.tif,model
+5,0.2,generated,0.5,test00090045.tif,test00090046.tif,model
+6,0.24,generated,0.6,test00090045.tif,test00090046.tif,model
+7,0.28,generated,0.7,test00090045.tif,test00090046.tif,model
+8,0.32,generated,0.8,test00090045.tif,test00090046.tif,model
+9,0.36,generated,0.9,test00090045.tif,test00090046.tif,model
+10,0.4,genuine,0.0,test00090046.tif,test00090047.tif,original source (bit-exact)
+11,0.44,generated,0.1,test00090046.tif,test00090047.tif,model
+12,0.48,generated,0.2,test00090046.tif,test00090047.tif,model
+13,0.52,generated,0.3,test00090046.tif,test00090047.tif,model
+14,0.56,generated,0.4,test00090046.tif,test00090047.tif,model
+15,0.6,generated,0.5,test00090046.tif,test00090047.tif,model
+16,0.64,generated,0.6,test00090046.tif,test00090047.tif,model
+17,0.68,generated,0.7,test00090046.tif,test00090047.tif,model
+18,0.72,generated,0.8,test00090046.tif,test00090047.tif,model
+19,0.76,generated,0.9,test00090046.tif,test00090047.tif,model
+20,0.8,genuine,0.0,test00090047.tif,test00090048.tif,original source (bit-exact)
+21,0.84,generated,0.1,test00090047.tif,test00090048.tif,model
+22,0.88,generated,0.2,test00090047.tif,test00090048.tif,model
+23,0.92,generated,0.3,test00090047.tif,test00090048.tif,model
+24,0.96,generated,0.4,test00090047.tif,test00090048.tif,model
+25,1.0,generated,0.5,test00090047.tif,test00090048.tif,model
+26,1.04,generated,0.6,test00090047.tif,test00090048.tif,model
+27,1.08,generated,0.7,test00090047.tif,test00090048.tif,model
+28,1.12,generated,0.8,test00090047.tif,test00090048.tif,model
+29,1.16,generated,0.9,test00090047.tif,test00090048.tif,model
+30,1.2,genuine,0.0,test00090048.tif,test00090049.tif,original source (bit-exact)
+31,1.24,generated,0.1,test00090048.tif,test00090049.tif,model
+32,1.28,generated,0.2,test00090048.tif,test00090049.tif,model
+33,1.32,generated,0.3,test00090048.tif,test00090049.tif,model
+34,1.36,generated,0.4,test00090048.tif,test00090049.tif,model
+35,1.4,generated,0.5,test00090048.tif,test00090049.tif,model
+36,1.44,generated,0.6,test00090048.tif,test00090049.tif,model
+37,1.48,generated,0.7,test00090048.tif,test00090049.tif,model
+38,1.52,generated,0.8,test00090048.tif,test00090049.tif,model
+39,1.56,generated,0.9,test00090048.tif,test00090049.tif,model
+40,1.6,genuine,0.0,test00090049.tif,test00090050.tif,original source (bit-exact)
+41,1.64,generated,0.1,test00090049.tif,test00090050.tif,model
+42,1.68,generated,0.2,test00090049.tif,test00090050.tif,model
+43,1.72,generated,0.3,test00090049.tif,test00090050.tif,model
+44,1.76,generated,0.4,test00090049.tif,test00090050.tif,model
+45,1.8,generated,0.5,test00090049.tif,test00090050.tif,model
+46,1.84,generated,0.6,test00090049.tif,test00090050.tif,model
+47,1.88,generated,0.7,test00090049.tif,test00090050.tif,model
+48,1.92,generated,0.8,test00090049.tif,test00090050.tif,model
+49,1.96,generated,0.9,test00090049.tif,test00090050.tif,model
+50,2.0,genuine,0.0,test00090050.tif,test00090051.tif,original source (bit-exact)
+51,2.04,generated,0.1,test00090050.tif,test00090051.tif,model
+52,2.08,generated,0.2,test00090050.tif,test00090051.tif,model
+53,2.12,generated,0.3,test00090050.tif,test00090051.tif,model
+54,2.16,generated,0.4,test00090050.tif,test00090051.tif,model
+55,2.2,generated,0.5,test00090050.tif,test00090051.tif,model
+56,2.24,generated,0.6,test00090050.tif,test00090051.tif,model
+57,2.28,generated,0.7,test00090050.tif,test00090051.tif,model
+58,2.32,generated,0.8,test00090050.tif,test00090051.tif,model
+59,2.36,generated,0.9,test00090050.tif,test00090051.tif,model
+60,2.4,genuine,0.0,test00090051.tif,test00090052.tif,original source (bit-exact)
+61,2.44,generated,0.1,test00090051.tif,test00090052.tif,model
+62,2.48,generated,0.2,test00090051.tif,test00090052.tif,model
+63,2.52,generated,0.3,test00090051.tif,test00090052.tif,model
+64,2.56,generated,0.4,test00090051.tif,test00090052.tif,model
+65,2.6,generated,0.5,test00090051.tif,test00090052.tif,model
+66,2.64,generated,0.6,test00090051.tif,test00090052.tif,model
+67,2.68,generated,0.7,test00090051.tif,test00090052.tif,model
+68,2.72,generated,0.8,test00090051.tif,test00090052.tif,model
+69,2.76,generated,0.9,test00090051.tif,test00090052.tif,model
+70,2.8,genuine,0.0,test00090052.tif,test00090053.tif,original source (bit-exact)
+71,2.84,generated,0.1,test00090052.tif,test00090053.tif,model
+72,2.88,generated,0.2,test00090052.tif,test00090053.tif,model
+73,2.92,generated,0.3,test00090052.tif,test00090053.tif,model
+74,2.96,generated,0.4,test00090052.tif,test00090053.tif,model
+75,3.0,generated,0.5,test00090052.tif,test00090053.tif,model
+76,3.04,generated,0.6,test00090052.tif,test00090053.tif,model
+77,3.08,generated,0.7,test00090052.tif,test00090053.tif,model
+78,3.12,generated,0.8,test00090052.tif,test00090053.tif,model
+79,3.16,generated,0.9,test00090052.tif,test00090053.tif,model
+80,3.2,genuine,0.0,test00090053.tif,test00090054.tif,original source (bit-exact)
+81,3.24,generated,0.1,test00090053.tif,test00090054.tif,model
+82,3.28,generated,0.2,test00090053.tif,test00090054.tif,model
+83,3.32,generated,0.3,test00090053.tif,test00090054.tif,model
+84,3.36,generated,0.4,test00090053.tif,test00090054.tif,model
+85,3.4,generated,0.5,test00090053.tif,test00090054.tif,model
+86,3.44,generated,0.6,test00090053.tif,test00090054.tif,model
+87,3.48,generated,0.7,test00090053.tif,test00090054.tif,model
+88,3.52,generated,0.8,test00090053.tif,test00090054.tif,model
+89,3.56,generated,0.9,test00090053.tif,test00090054.tif,model
+90,3.6,genuine,0.0,test00090054.tif,test00090055.tif,original source (bit-exact)
+91,3.64,generated,0.1,test00090054.tif,test00090055.tif,model
+92,3.68,generated,0.2,test00090054.tif,test00090055.tif,model
+93,3.72,generated,0.3,test00090054.tif,test00090055.tif,model
+94,3.76,generated,0.4,test00090054.tif,test00090055.tif,model
+95,3.8,generated,0.5,test00090054.tif,test00090055.tif,model
+96,3.84,generated,0.6,test00090054.tif,test00090055.tif,model
+97,3.88,generated,0.7,test00090054.tif,test00090055.tif,model
+98,3.92,generated,0.8,test00090054.tif,test00090055.tif,model
+99,3.96,generated,0.9,test00090054.tif,test00090055.tif,model
+100,4.0,genuine,0.0,test00090055.tif,test00090056.tif,original source (bit-exact)
+101,4.04,generated,0.1,test00090055.tif,test00090056.tif,model
+102,4.08,generated,0.2,test00090055.tif,test00090056.tif,model
+103,4.12,generated,0.3,test00090055.tif,test00090056.tif,model
+104,4.16,generated,0.4,test00090055.tif,test00090056.tif,model
+105,4.2,generated,0.5,test00090055.tif,test00090056.tif,model
+106,4.24,generated,0.6,test00090055.tif,test00090056.tif,model
+107,4.28,generated,0.7,test00090055.tif,test00090056.tif,model
+108,4.32,generated,0.8,test00090055.tif,test00090056.tif,model
+109,4.36,generated,0.9,test00090055.tif,test00090056.tif,model
+110,4.4,genuine,0.0,test00090056.tif,test00090057.tif,original source (bit-exact)
+111,4.44,generated,0.1,test00090056.tif,test00090057.tif,model
+112,4.48,generated,0.2,test00090056.tif,test00090057.tif,model
+113,4.52,generated,0.3,test00090056.tif,test00090057.tif,model
+114,4.56,generated,0.4,test00090056.tif,test00090057.tif,model
+115,4.6,generated,0.5,test00090056.tif,test00090057.tif,model
+116,4.64,generated,0.6,test00090056.tif,test00090057.tif,model
+117,4.68,generated,0.7,test00090056.tif,test00090057.tif,model
+118,4.72,generated,0.8,test00090056.tif,test00090057.tif,model
+119,4.76,generated,0.9,test00090056.tif,test00090057.tif,model
+120,4.8,genuine,0.0,test00090057.tif,test00090058.tif,original source (bit-exact)
+121,4.84,generated,0.1,test00090057.tif,test00090058.tif,model
+122,4.88,generated,0.2,test00090057.tif,test00090058.tif,model
+123,4.92,generated,0.3,test00090057.tif,test00090058.tif,model
+124,4.96,generated,0.4,test00090057.tif,test00090058.tif,model
+125,5.0,generated,0.5,test00090057.tif,test00090058.tif,model
+126,5.04,generated,0.6,test00090057.tif,test00090058.tif,model
+127,5.08,generated,0.7,test00090057.tif,test00090058.tif,model
+128,5.12,generated,0.8,test00090057.tif,test00090058.tif,model
+129,5.16,generated,0.9,test00090057.tif,test00090058.tif,model
+130,5.2,genuine,0.0,test00090058.tif,test00090059.tif,original source (bit-exact)
+131,5.24,generated,0.1,test00090058.tif,test00090059.tif,model
+132,5.28,generated,0.2,test00090058.tif,test00090059.tif,model
+133,5.32,generated,0.3,test00090058.tif,test00090059.tif,model
+134,5.36,generated,0.4,test00090058.tif,test00090059.tif,model
+135,5.4,generated,0.5,test00090058.tif,test00090059.tif,model
+136,5.44,generated,0.6,test00090058.tif,test00090059.tif,model
+137,5.48,generated,0.7,test00090058.tif,test00090059.tif,model
+138,5.52,generated,0.8,test00090058.tif,test00090059.tif,model
+139,5.56,generated,0.9,test00090058.tif,test00090059.tif,model
+140,5.6,genuine,0.0,test00090059.tif,test00090060.tif,original source (bit-exact)
+141,5.64,generated,0.1,test00090059.tif,test00090060.tif,model
+142,5.68,generated,0.2,test00090059.tif,test00090060.tif,model
+143,5.72,generated,0.3,test00090059.tif,test00090060.tif,model
+144,5.76,generated,0.4,test00090059.tif,test00090060.tif,model
+145,5.8,generated,0.5,test00090059.tif,test00090060.tif,model
+146,5.84,generated,0.6,test00090059.tif,test00090060.tif,model
+147,5.88,generated,0.7,test00090059.tif,test00090060.tif,model
+148,5.92,generated,0.8,test00090059.tif,test00090060.tif,model
+149,5.96,generated,0.9,test00090059.tif,test00090060.tif,model
+150,6.0,genuine,0.0,test00090060.tif,test00090061.tif,original source (bit-exact)
+151,6.04,generated,0.1,test00090060.tif,test00090061.tif,model
+152,6.08,generated,0.2,test00090060.tif,test00090061.tif,model
+153,6.12,generated,0.3,test00090060.tif,test00090061.tif,model
+154,6.16,generated,0.4,test00090060.tif,test00090061.tif,model
+155,6.2,generated,0.5,test00090060.tif,test00090061.tif,model
+156,6.24,generated,0.6,test00090060.tif,test00090061.tif,model
+157,6.28,generated,0.7,test00090060.tif,test00090061.tif,model
+158,6.32,generated,0.8,test00090060.tif,test00090061.tif,model
+159,6.36,generated,0.9,test00090060.tif,test00090061.tif,model
+160,6.4,genuine,0.0,test00090061.tif,test00090062.tif,original source (bit-exact)
+161,6.44,generated,0.1,test00090061.tif,test00090062.tif,model
+162,6.48,generated,0.2,test00090061.tif,test00090062.tif,model
+163,6.52,generated,0.3,test00090061.tif,test00090062.tif,model
+164,6.56,generated,0.4,test00090061.tif,test00090062.tif,model
+165,6.6,generated,0.5,test00090061.tif,test00090062.tif,model
+166,6.64,generated,0.6,test00090061.tif,test00090062.tif,model
+167,6.68,generated,0.7,test00090061.tif,test00090062.tif,model
+168,6.72,generated,0.8,test00090061.tif,test00090062.tif,model
+169,6.76,generated,0.9,test00090061.tif,test00090062.tif,model
+170,6.8,genuine,0.0,test00090062.tif,test00090063.tif,original source (bit-exact)
+171,6.84,generated,0.1,test00090062.tif,test00090063.tif,model
+172,6.88,generated,0.2,test00090062.tif,test00090063.tif,model
+173,6.92,generated,0.3,test00090062.tif,test00090063.tif,model
+174,6.96,generated,0.4,test00090062.tif,test00090063.tif,model
+175,7.0,generated,0.5,test00090062.tif,test00090063.tif,model
+176,7.04,generated,0.6,test00090062.tif,test00090063.tif,model
+177,7.08,generated,0.7,test00090062.tif,test00090063.tif,model
+178,7.12,generated,0.8,test00090062.tif,test00090063.tif,model
+179,7.16,generated,0.9,test00090062.tif,test00090063.tif,model
+180,7.2,genuine,0.0,test00090063.tif,test00090064.tif,original source (bit-exact)
+181,7.24,generated,0.1,test00090063.tif,test00090064.tif,model
+182,7.28,generated,0.2,test00090063.tif,test00090064.tif,model
+183,7.32,generated,0.3,test00090063.tif,test00090064.tif,model
+184,7.36,generated,0.4,test00090063.tif,test00090064.tif,model
+185,7.4,generated,0.5,test00090063.tif,test00090064.tif,model
+186,7.44,generated,0.6,test00090063.tif,test00090064.tif,model
+187,7.48,generated,0.7,test00090063.tif,test00090064.tif,model
+188,7.52,generated,0.8,test00090063.tif,test00090064.tif,model
+189,7.56,generated,0.9,test00090063.tif,test00090064.tif,model
+190,7.6,genuine,0.0,test00090064.tif,test00090065.tif,original source (bit-exact)
+191,7.64,generated,0.1,test00090064.tif,test00090065.tif,model
+192,7.68,generated,0.2,test00090064.tif,test00090065.tif,model
+193,7.72,generated,0.3,test00090064.tif,test00090065.tif,model
+194,7.76,generated,0.4,test00090064.tif,test00090065.tif,model
+195,7.8,generated,0.5,test00090064.tif,test00090065.tif,model
+196,7.84,generated,0.6,test00090064.tif,test00090065.tif,model
+197,7.88,generated,0.7,test00090064.tif,test00090065.tif,model
+198,7.92,generated,0.8,test00090064.tif,test00090065.tif,model
+199,7.96,generated,0.9,test00090064.tif,test00090065.tif,model
+200,8.0,genuine,0.0,test00090065.tif,test00090066.tif,original source (bit-exact)
+201,8.04,generated,0.1,test00090065.tif,test00090066.tif,model
+202,8.08,generated,0.2,test00090065.tif,test00090066.tif,model
+203,8.12,generated,0.3,test00090065.tif,test00090066.tif,model
+204,8.16,generated,0.4,test00090065.tif,test00090066.tif,model
+205,8.2,generated,0.5,test00090065.tif,test00090066.tif,model
+206,8.24,generated,0.6,test00090065.tif,test00090066.tif,model
+207,8.28,generated,0.7,test00090065.tif,test00090066.tif,model
+208,8.32,generated,0.8,test00090065.tif,test00090066.tif,model
+209,8.36,generated,0.9,test00090065.tif,test00090066.tif,model
+210,8.4,genuine,0.0,test00090066.tif,test00090067.tif,original source (bit-exact)
+211,8.44,generated,0.1,test00090066.tif,test00090067.tif,model
+212,8.48,generated,0.2,test00090066.tif,test00090067.tif,model
+213,8.52,generated,0.3,test00090066.tif,test00090067.tif,model
+214,8.56,generated,0.4,test00090066.tif,test00090067.tif,model
+215,8.6,generated,0.5,test00090066.tif,test00090067.tif,model
+216,8.64,generated,0.6,test00090066.tif,test00090067.tif,model
+217,8.68,generated,0.7,test00090066.tif,test00090067.tif,model
+218,8.72,generated,0.8,test00090066.tif,test00090067.tif,model
+219,8.76,generated,0.9,test00090066.tif,test00090067.tif,model
+220,8.8,genuine,0.0,test00090067.tif,test00090068.tif,original source (bit-exact)
+221,8.84,generated,0.1,test00090067.tif,test00090068.tif,model
+222,8.88,generated,0.2,test00090067.tif,test00090068.tif,model
+223,8.92,generated,0.3,test00090067.tif,test00090068.tif,model
+224,8.96,generated,0.4,test00090067.tif,test00090068.tif,model
+225,9.0,generated,0.5,test00090067.tif,test00090068.tif,model
+226,9.04,generated,0.6,test00090067.tif,test00090068.tif,model
+227,9.08,generated,0.7,test00090067.tif,test00090068.tif,model
+228,9.12,generated,0.8,test00090067.tif,test00090068.tif,model
+229,9.16,generated,0.9,test00090067.tif,test00090068.tif,model
+230,9.2,genuine,0.0,test00090068.tif,test00090069.tif,original source (bit-exact)
+231,9.24,generated,0.1,test00090068.tif,test00090069.tif,model
+232,9.28,generated,0.2,test00090068.tif,test00090069.tif,model
+233,9.32,generated,0.3,test00090068.tif,test00090069.tif,model
+234,9.36,generated,0.4,test00090068.tif,test00090069.tif,model
+235,9.4,generated,0.5,test00090068.tif,test00090069.tif,model
+236,9.44,generated,0.6,test00090068.tif,test00090069.tif,model
+237,9.48,generated,0.7,test00090068.tif,test00090069.tif,model
+238,9.52,generated,0.8,test00090068.tif,test00090069.tif,model
+239,9.56,generated,0.9,test00090068.tif,test00090069.tif,model
+240,9.6,genuine,0.0,test00090069.tif,test00090070.tif,original source (bit-exact)
+241,9.64,generated,0.1,test00090069.tif,test00090070.tif,model
+242,9.68,generated,0.2,test00090069.tif,test00090070.tif,model
+243,9.72,generated,0.3,test00090069.tif,test00090070.tif,model
+244,9.76,generated,0.4,test00090069.tif,test00090070.tif,model
+245,9.8,generated,0.5,test00090069.tif,test00090070.tif,model
+246,9.84,generated,0.6,test00090069.tif,test00090070.tif,model
+247,9.88,generated,0.7,test00090069.tif,test00090070.tif,model
+248,9.92,generated,0.8,test00090069.tif,test00090070.tif,model
+249,9.96,generated,0.9,test00090069.tif,test00090070.tif,model
+250,10.0,genuine,0.0,test00090070.tif,test00090071.tif,original source (bit-exact)
+251,10.04,generated,0.1,test00090070.tif,test00090071.tif,model
+252,10.08,generated,0.2,test00090070.tif,test00090071.tif,model
+253,10.12,generated,0.3,test00090070.tif,test00090071.tif,model
+254,10.16,generated,0.4,test00090070.tif,test00090071.tif,model
+255,10.2,generated,0.5,test00090070.tif,test00090071.tif,model
+256,10.24,generated,0.6,test00090070.tif,test00090071.tif,model
+257,10.28,generated,0.7,test00090070.tif,test00090071.tif,model
+258,10.32,generated,0.8,test00090070.tif,test00090071.tif,model
+259,10.36,generated,0.9,test00090070.tif,test00090071.tif,model
+260,10.4,genuine,0.0,test00090071.tif,test00090072.tif,original source (bit-exact)
+261,10.44,generated,0.1,test00090071.tif,test00090072.tif,model
+262,10.48,generated,0.2,test00090071.tif,test00090072.tif,model
+263,10.52,generated,0.3,test00090071.tif,test00090072.tif,model
+264,10.56,generated,0.4,test00090071.tif,test00090072.tif,model
+265,10.6,generated,0.5,test00090071.tif,test00090072.tif,model
+266,10.64,generated,0.6,test00090071.tif,test00090072.tif,model
+267,10.68,generated,0.7,test00090071.tif,test00090072.tif,model
+268,10.72,generated,0.8,test00090071.tif,test00090072.tif,model
+269,10.76,generated,0.9,test00090071.tif,test00090072.tif,model
+270,10.8,genuine,0.0,test00090072.tif,test00090073.tif,original source (bit-exact)
+271,10.84,generated,0.1,test00090072.tif,test00090073.tif,model
+272,10.88,generated,0.2,test00090072.tif,test00090073.tif,model
+273,10.92,generated,0.3,test00090072.tif,test00090073.tif,model
+274,10.96,generated,0.4,test00090072.tif,test00090073.tif,model
+275,11.0,generated,0.5,test00090072.tif,test00090073.tif,model
+276,11.04,generated,0.6,test00090072.tif,test00090073.tif,model
+277,11.08,generated,0.7,test00090072.tif,test00090073.tif,model
+278,11.12,generated,0.8,test00090072.tif,test00090073.tif,model
+279,11.16,generated,0.9,test00090072.tif,test00090073.tif,model
+280,11.2,genuine,0.0,test00090073.tif,test00090074.tif,original source (bit-exact)
+281,11.24,generated,0.1,test00090073.tif,test00090074.tif,model
+282,11.28,generated,0.2,test00090073.tif,test00090074.tif,model
+283,11.32,generated,0.3,test00090073.tif,test00090074.tif,model
+284,11.36,generated,0.4,test00090073.tif,test00090074.tif,model
+285,11.4,generated,0.5,test00090073.tif,test00090074.tif,model
+286,11.44,generated,0.6,test00090073.tif,test00090074.tif,model
+287,11.48,generated,0.7,test00090073.tif,test00090074.tif,model
+288,11.52,generated,0.8,test00090073.tif,test00090074.tif,model
+289,11.56,generated,0.9,test00090073.tif,test00090074.tif,model
+290,11.6,genuine,0.0,test00090074.tif,test00090075.tif,original source (bit-exact)
+291,11.64,generated,0.1,test00090074.tif,test00090075.tif,model
+292,11.68,generated,0.2,test00090074.tif,test00090075.tif,model
+293,11.72,generated,0.3,test00090074.tif,test00090075.tif,model
+294,11.76,generated,0.4,test00090074.tif,test00090075.tif,model
+295,11.8,generated,0.5,test00090074.tif,test00090075.tif,model
+296,11.84,generated,0.6,test00090074.tif,test00090075.tif,model
+297,11.88,generated,0.7,test00090074.tif,test00090075.tif,model
+298,11.92,generated,0.8,test00090074.tif,test00090075.tif,model
+299,11.96,generated,0.9,test00090074.tif,test00090075.tif,model
+300,12.0,genuine,0.0,test00090075.tif,test00090076.tif,original source (bit-exact)
+301,12.04,generated,0.1,test00090075.tif,test00090076.tif,model
+302,12.08,generated,0.2,test00090075.tif,test00090076.tif,model
+303,12.12,generated,0.3,test00090075.tif,test00090076.tif,model
+304,12.16,generated,0.4,test00090075.tif,test00090076.tif,model
+305,12.2,generated,0.5,test00090075.tif,test00090076.tif,model
+306,12.24,generated,0.6,test00090075.tif,test00090076.tif,model
+307,12.28,generated,0.7,test00090075.tif,test00090076.tif,model
+308,12.32,generated,0.8,test00090075.tif,test00090076.tif,model
+309,12.36,generated,0.9,test00090075.tif,test00090076.tif,model
+310,12.4,genuine,0.0,test00090076.tif,test00090077.tif,original source (bit-exact)
+311,12.44,generated,0.1,test00090076.tif,test00090077.tif,model
+312,12.48,generated,0.2,test00090076.tif,test00090077.tif,model
+313,12.52,generated,0.3,test00090076.tif,test00090077.tif,model
+314,12.56,generated,0.4,test00090076.tif,test00090077.tif,model
+315,12.6,generated,0.5,test00090076.tif,test00090077.tif,model
+316,12.64,generated,0.6,test00090076.tif,test00090077.tif,model
+317,12.68,generated,0.7,test00090076.tif,test00090077.tif,model
+318,12.72,generated,0.8,test00090076.tif,test00090077.tif,model
+319,12.76,generated,0.9,test00090076.tif,test00090077.tif,model
+320,12.8,genuine,0.0,test00090077.tif,test00090078.tif,original source (bit-exact)
+321,12.84,generated,0.1,test00090077.tif,test00090078.tif,model
+322,12.88,generated,0.2,test00090077.tif,test00090078.tif,model
+323,12.92,generated,0.3,test00090077.tif,test00090078.tif,model
+324,12.96,generated,0.4,test00090077.tif,test00090078.tif,model
+325,13.0,generated,0.5,test00090077.tif,test00090078.tif,model
+326,13.04,generated,0.6,test00090077.tif,test00090078.tif,model
+327,13.08,generated,0.7,test00090077.tif,test00090078.tif,model
+328,13.12,generated,0.8,test00090077.tif,test00090078.tif,model
+329,13.16,generated,0.9,test00090077.tif,test00090078.tif,model
+330,13.2,genuine,0.0,test00090078.tif,test00090079.tif,original source (bit-exact)
+331,13.24,generated,0.1,test00090078.tif,test00090079.tif,model
+332,13.28,generated,0.2,test00090078.tif,test00090079.tif,model
+333,13.32,generated,0.3,test00090078.tif,test00090079.tif,model
+334,13.36,generated,0.4,test00090078.tif,test00090079.tif,model
+335,13.4,generated,0.5,test00090078.tif,test00090079.tif,model
+336,13.44,generated,0.6,test00090078.tif,test00090079.tif,model
+337,13.48,generated,0.7,test00090078.tif,test00090079.tif,model
+338,13.52,generated,0.8,test00090078.tif,test00090079.tif,model
+339,13.56,generated,0.9,test00090078.tif,test00090079.tif,model
+340,13.6,genuine,0.0,test00090079.tif,test00090080.tif,original source (bit-exact)
+341,13.64,generated,0.1,test00090079.tif,test00090080.tif,model
+342,13.68,generated,0.2,test00090079.tif,test00090080.tif,model
+343,13.72,generated,0.3,test00090079.tif,test00090080.tif,model
+344,13.76,generated,0.4,test00090079.tif,test00090080.tif,model
+345,13.8,generated,0.5,test00090079.tif,test00090080.tif,model
+346,13.84,generated,0.6,test00090079.tif,test00090080.tif,model
+347,13.88,generated,0.7,test00090079.tif,test00090080.tif,model
+348,13.92,generated,0.8,test00090079.tif,test00090080.tif,model
+349,13.96,generated,0.9,test00090079.tif,test00090080.tif,model
+350,14.0,genuine,0.0,test00090080.tif,test00090081.tif,original source (bit-exact)
+351,14.04,generated,0.1,test00090080.tif,test00090081.tif,model
+352,14.08,generated,0.2,test00090080.tif,test00090081.tif,model
+353,14.12,generated,0.3,test00090080.tif,test00090081.tif,model
+354,14.16,generated,0.4,test00090080.tif,test00090081.tif,model
+355,14.2,generated,0.5,test00090080.tif,test00090081.tif,model
+356,14.24,generated,0.6,test00090080.tif,test00090081.tif,model
+357,14.28,generated,0.7,test00090080.tif,test00090081.tif,model
+358,14.32,generated,0.8,test00090080.tif,test00090081.tif,model
+359,14.36,generated,0.9,test00090080.tif,test00090081.tif,model
+360,14.4,genuine,0.0,test00090081.tif,test00090082.tif,original source (bit-exact)
+361,14.44,generated,0.1,test00090081.tif,test00090082.tif,model
+362,14.48,generated,0.2,test00090081.tif,test00090082.tif,model
+363,14.52,generated,0.3,test00090081.tif,test00090082.tif,model
+364,14.56,generated,0.4,test00090081.tif,test00090082.tif,model
+365,14.6,generated,0.5,test00090081.tif,test00090082.tif,model
+366,14.64,generated,0.6,test00090081.tif,test00090082.tif,model
+367,14.68,generated,0.7,test00090081.tif,test00090082.tif,model
+368,14.72,generated,0.8,test00090081.tif,test00090082.tif,model
+369,14.76,generated,0.9,test00090081.tif,test00090082.tif,model
+370,14.8,genuine,0.0,test00090082.tif,test00090083.tif,original source (bit-exact)
+371,14.84,generated,0.1,test00090082.tif,test00090083.tif,model
+372,14.88,generated,0.2,test00090082.tif,test00090083.tif,model
+373,14.92,generated,0.3,test00090082.tif,test00090083.tif,model
+374,14.96,generated,0.4,test00090082.tif,test00090083.tif,model
+375,15.0,generated,0.5,test00090082.tif,test00090083.tif,model
+376,15.04,generated,0.6,test00090082.tif,test00090083.tif,model
+377,15.08,generated,0.7,test00090082.tif,test00090083.tif,model
+378,15.12,generated,0.8,test00090082.tif,test00090083.tif,model
+379,15.16,generated,0.9,test00090082.tif,test00090083.tif,model
+380,15.2,genuine,0.0,test00090083.tif,test00090084.tif,original source (bit-exact)
+381,15.24,generated,0.1,test00090083.tif,test00090084.tif,model
+382,15.28,generated,0.2,test00090083.tif,test00090084.tif,model
+383,15.32,generated,0.3,test00090083.tif,test00090084.tif,model
+384,15.36,generated,0.4,test00090083.tif,test00090084.tif,model
+385,15.4,generated,0.5,test00090083.tif,test00090084.tif,model
+386,15.44,generated,0.6,test00090083.tif,test00090084.tif,model
+387,15.48,generated,0.7,test00090083.tif,test00090084.tif,model
+388,15.52,generated,0.8,test00090083.tif,test00090084.tif,model
+389,15.56,generated,0.9,test00090083.tif,test00090084.tif,model
+390,15.6,genuine,0.0,test00090084.tif,test00090085.tif,original source (bit-exact)
+391,15.64,generated,0.1,test00090084.tif,test00090085.tif,model
+392,15.68,generated,0.2,test00090084.tif,test00090085.tif,model
+393,15.72,generated,0.3,test00090084.tif,test00090085.tif,model
+394,15.76,generated,0.4,test00090084.tif,test00090085.tif,model
+395,15.8,generated,0.5,test00090084.tif,test00090085.tif,model
+396,15.84,generated,0.6,test00090084.tif,test00090085.tif,model
+397,15.88,generated,0.7,test00090084.tif,test00090085.tif,model
+398,15.92,generated,0.8,test00090084.tif,test00090085.tif,model
+399,15.96,generated,0.9,test00090084.tif,test00090085.tif,model
+400,16.0,genuine,0.0,test00090085.tif,test00090085.tif,original source (bit-exact)

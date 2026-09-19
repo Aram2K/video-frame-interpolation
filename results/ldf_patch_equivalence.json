@@ -1,0 +1,20 @@
+{
+ "frames_compared": 80,
+ "upstream_vs_upstream_rerun (GPU determinism)": {
+  "identical_fraction": 1.0,
+  "max_abs_diff_codes": 0,
+  "mean_abs_diff_codes": 0.0
+ },
+ "upstream_vs_all_patches_except_output + float reader (must be identical)": {
+  "identical_fraction": 1.0,
+  "max_abs_diff_codes": 0,
+  "mean_abs_diff_codes": 0.0
+ },
+ "upstream_vs_floor(float output) (differs only by upstream's bf16 add/mul before .byte())": {
+  "identical_fraction": 0.9633564352989197,
+  "max_abs_diff_codes": 1,
+  "mean_abs_diff_codes": 0.036643560975790024
+ },
+ "float_output_fractional_part_mean": 0.5373754501342773,
+ "verdict": "PLUMBING BIT-EXACT"
+}

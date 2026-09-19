@@ -1,0 +1,182 @@
+{
+ "input": "$MVFI_ROOT/input/test01",
+ "input_files_used": 41,
+ "input_stride": 1,
+ "source_dtype": "uint16",
+ "width": 3840,
+ "height": 2160,
+ "model_input_frames": 41,
+ "temporal_sf": 10,
+ "output_frames": 401,
+ "input_duration_s_at_fps": 1.64,
+ "output_duration_s_at_fps": 16.04,
+ "expansion_factor": 9.78048780487805,
+ "fps": 25.0,
+ "paste_originals": true,
+ "holdout_psnr_db_mean": null,
+ "timing_s": {
+  "model_load": 1.8399734497070312,
+  "generation_and_write": 553.2328670024872,
+  "total": 555.1154797077179,
+  "sec_per_pair_mean": 12.742325747013092,
+  "sec_per_output_frame": 1.3796330847942324
+ },
+ "gpu": {
+  "name": "NVIDIA A100 80GB PCIe",
+  "max_memory_allocated_gib": 22.282555103302002,
+  "max_memory_reserved_gib": 31.943359375
+ },
+ "software": {
+  "python": "3.11.9",
+  "torch": "2.4.1+cu121",
+  "torch_cuda": "12.1",
+  "harness_sha256": "65045e37d7df8b690b3b883cc7b8b15ff8cedfd0ed9adf27b798d284c945420d"
+ },
+ "model": {
+  "adapter": "$MVFI_ROOT/scripts/adapters/bimvfi.py",
+  "adapter_sha256": "a4ff00ed88daf51bdf2880a3e3eb5ac94b15c8c6264c6570783a99fa913c4f76",
+  "adapter_args": {
+   "pyr_level": 7,
+   "pad_mode": "constant"
+  },
+  "name": "BiM-VFI (CVPR 2025)",
+  "repo_url": "https://github.com/KAIST-VICLab/BiM-VFI",
+  "repo_path": "$MVFI_ROOT/src/BiM-VFI",
+  "repo_commit": "df79cbcad4214d48911040def459174d0a4c9791",
+  "repo_patches": "none (network imported via a stub 'modules' package)",
+  "weights": [
+   {
+    "file": "$MVFI_ROOT/models/BiM-VFI/bim_vfi.pth",
+    "url": "https://drive.google.com/file/d/18Wre7XyRtu_wtFRzcsit6oNfHiFRt9vC/view",
+    "sha256": "510cbcb07a7f8fcb17b4da241bbee2a6e20a8eb9bb423cf4df4815b7cd6d1cc0",
+    "bytes": 82749822
+   }
+  ],
+  "checkpoint": {
+   "checkpoint_epoch": 400,
+   "checkpoint_iteration": 767200,
+   "checkpoint_tensor_dtypes": [
+    "torch.float32"
+   ],
+   "checkpoint_load": "restricted unpickler (tensors + OrderedDict only; lr_scheduler getattr stubbed)",
+   "n_params": 6878892
+  },
+  "license": "Research and education only (README 'License' section, which covers the source code and the checkpoint); any commercial use needs formal permission from the BiM-VFI authors (see https://github.com/KAIST-VICLab/BiM-VFI). No LICENSE file upstream. Weights trained on Vimeo90K (research-use terms).",
+  "license_file": "$MVFI_ROOT/models/BiM-VFI/LICENSE_NOTICE.txt",
+  "settings": {
+   "pyr_level": 7,
+   "divisor": 256,
+   "pad_mode": "constant",
+   "pad_is_upstream": true,
+   "padding_evidence": {
+    "default": "constant (upstream InputPadder: zeros bottom/right, applied after the model's own mean/std normalisation). reflect/replicate are opt-in.",
+    "reflect_vs_constant_mean_abs_interior": 0.00978,
+    "replicate_vs_constant_mean_abs_interior": 0.01045,
+    "pyr8_vs_pyr7_mean_abs_reference": {
+     "constant": 0.00817,
+     "reflect": 0.00891
+    },
+    "normalisation_shift_from_prepadding": {
+     "fabricated_fraction_of_tensor": 0.121,
+     "mean": [
+      0.309944,
+      0.311411
+     ],
+     "std": [
+      0.145377,
+      0.146
+     ]
+    },
+    "holdout_vs_ground_truth_mean_abs": {
+     "_what": "smoke frames 0,2 -> t=0.5 scored against the real frame 1; lower is better; job 319406",
+     "constant": {
+      "whole": 0.0588,
+      "interior": 0.059,
+      "left": 0.0912,
+      "top": 0.0526,
+      "bottom": 0.041,
+      "right": 0.0242
+     },
+     "reflect64": {
+      "whole": 0.059,
+      "interior": 0.0592,
+      "left": 0.1038,
+      "top": 0.0489,
+      "bottom": 0.0412,
+      "right": 0.0228
+     },
+     "replicate64": {
+      "whole": 0.0584,
+      "interior": 0.0586,
+      "left": 0.088,
+      "top": 0.0434,
+      "bottom": 0.0399,
+      "right": 0.0226
+     }
+    },
+    "interpretation": "Pre-padding is not a border-only change: the model normalises by mean/std taken over the tensor it is given (bim_vfi.py:147-158, before InputPadder at :162), so a centred reflect pad puts 12.1% fabricated pixels into those global statistics and shifts every pixel. The resulting interior delta (0.00978) exceeds the pyr8-vs-pyr7 delta (0.00817-0.00891) that is treated as a real modelling change, so reflect is a whole-picture deviation, not a border tweak. Against ground truth it is also slightly WORSE than upstream (whole 0.0590 vs 0.0588, left edge 0.1038 vs 0.0912), so the deviation buys nothing and upstream is the default.",
+    "edge_metric_verdict": "The |out - 50/50 blend| per-edge metric used in job 319322 does NOT discriminate padding modes; it mostly tracks motion. Per-edge at t=0.5 -- reflect: top 0.0889 bottom 0.0315 left 0.0730 right 0.0259 interior 0.0636; constant: top 0.0886 bottom 0.0344 left 0.0691 right 0.0268 interior 0.0638. Reflect's top strip is 40% ABOVE its own interior, so the earlier claim that reflect suppresses upstream issue #6 is WITHDRAWN as unsupported.",
+    "evidence_jobs": [
+     "319322 (first per-edge + reflect-vs-constant interior delta, reflect was still the default)",
+     "319406 (re-measured against this on-disk code, plus the normalisation-shift mechanism and the ground-truth hold-out that actually ranks the modes)"
+    ],
+    "open": "Decided on one synthetic 4K pair only. On the first real shot run VARIANT=pyr7_sf10 (upstream) and, if border quality is ever in question, VARIANT=pyr7_sf10_reflectpad, and decide from that footage. replicate64 was marginally best in the hold-out (whole 0.0584 vs 0.0588, 0.7%) and is worth re-testing on real footage, but one pair of one synthetic clip does not justify deviating from upstream."
+   },
+   "margin": 0,
+   "padded": {
+    "height": 2160,
+    "width": 3840,
+    "left": 0,
+    "right": 0,
+    "top": 0,
+    "bottom": 0
+   },
+   "t_batch": 1,
+   "time_step_shape": "(1,1,1) per t",
+   "dtype": "float32",
+   "autocast": false,
+   "tf32": false,
+   "cudnn_benchmark": false,
+   "output": "imgt_pred, cropped, unclamped (harness clamps to [0,1] and rounds to uint16)"
+  },
+  "raw_output_stats": {
+   "frames": 360,
+   "min": -0.24929459393024445,
+   "max": 0.8800438642501831,
+   "n_values": 8957952000,
+   "nonfinite": 0,
+   "frac_below0": 0.03285292408354052,
+   "frac_above1": 0.0
+  },
+  "runtime": {
+   "cupy": "13.6.0",
+   "nvrtc": "12.1",
+   "nvrtc_preloaded": [
+    "$MVFI_ROOT/env/bimvfi/lib/python3.11/site-packages/nvidia/cuda_nvrtc/lib/libnvrtc-builtins.so.12.1",
+    "$MVFI_ROOT/env/bimvfi/lib/python3.11/site-packages/nvidia/cuda_nvrtc/lib/libnvrtc.so.12"
+   ],
+   "antialias_downsample_cpu_fallback_calls": 0
+  }
+ },
+ "settings": {
+  "adapter": "$MVFI_ROOT/scripts/adapters/bimvfi.py",
+  "input": "$MVFI_ROOT/input/test01",
+  "out_dir": "$MVFI_ROOT/output/test01/bim-vfi/pyr7_sf10",
+  "temporal_sf": 10,
+  "fps": 25.0,
+  "input_stride": 1,
+  "max_input_frames": null,
+  "adapter_arg": [
+   "pyr_level=7",
+   "pad_mode=constant"
+  ],
+  "write_workers": 8,
+  "cpu": false
+ },
+ "slurm": {
+  "SLURM_JOB_ID": "319418",
+  "SLURM_JOB_NODELIST": "ngpu02",
+  "CUDA_VISIBLE_DEVICES": "0"
+ },
+ "output_dir": "$MVFI_ROOT/output/test01/bim-vfi/pyr7_sf10"
+}

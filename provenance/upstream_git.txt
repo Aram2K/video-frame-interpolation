@@ -1,0 +1,8 @@
+61b34d2379df8a313e8e4cb467cc2f74c52b45d7 2026-05-03 17:41:47 +0800 Fix shell/train_vae.sh
+https://github.com/xypeng9903/LDF-VFI.git
+?? __pycache__/
+?? training/__pycache__/
+?? training/data/__pycache__/
+?? training/distributed/__pycache__/
+?? training/models/__pycache__/
+dirty-check above (empty = clean)

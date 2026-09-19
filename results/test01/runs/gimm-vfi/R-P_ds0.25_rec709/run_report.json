@@ -1,0 +1,115 @@
+{
+ "input": "$MVFI_ROOT/input/test01_rec709",
+ "input_files_used": 41,
+ "input_stride": 1,
+ "source_dtype": "uint16",
+ "width": 3840,
+ "height": 2160,
+ "model_input_frames": 41,
+ "temporal_sf": 10,
+ "output_frames": 401,
+ "input_duration_s_at_fps": 1.64,
+ "output_duration_s_at_fps": 16.04,
+ "expansion_factor": 9.78048780487805,
+ "fps": 25.0,
+ "paste_originals": true,
+ "holdout_psnr_db_mean": null,
+ "timing_s": {
+  "model_load": 1.1151094436645508,
+  "generation_and_write": 175.57907366752625,
+  "total": 177.06662583351135,
+  "sec_per_pair_mean": 3.3425577580928802,
+  "sec_per_output_frame": 0.4378530515399657
+ },
+ "gpu": {
+  "name": "NVIDIA A100 80GB PCIe",
+  "max_memory_allocated_gib": 10.586219310760498,
+  "max_memory_reserved_gib": 12.169921875
+ },
+ "software": {
+  "python": "3.10.14",
+  "torch": "2.5.1+cu121",
+  "torch_cuda": "12.1",
+  "harness_sha256": "65045e37d7df8b690b3b883cc7b8b15ff8cedfd0ed9adf27b798d284c945420d"
+ },
+ "model": {
+  "adapter": "$MVFI_ROOT/scripts/adapters/gimmvfi.py",
+  "adapter_sha256": "29d9458e29a4cca99aca34f8d3d67e8678f75c9916cb1e0410b464a94a48bafc",
+  "adapter_args": {
+   "model_variant": "R-P",
+   "ds_factor": 0.25
+  },
+  "name": "GIMM-VFI-R-P",
+  "paper": "Guo, Li, Loy. Generalizable Implicit Motion Modeling for Video Frame Interpolation. NeurIPS 2024 (arXiv 2407.08680)",
+  "repo_url": "https://github.com/GSeanCDAT/GIMM-VFI",
+  "repo_path": "$MVFI_ROOT/src/GIMM-VFI",
+  "repo_commit": "dbc56449994a3c2e045d46fd46bed570239913f8",
+  "repo_commit_expected": "dbc56449994a3c2e045d46fd46bed570239913f8",
+  "upstream_files_modified": false,
+  "weights_repo": "https://huggingface.co/GSean/GIMM-VFI",
+  "weights_revision": "ab7735cdcfbd2e03c1bf2819380a25e8a4f321d1",
+  "variant": "R-P",
+  "config": "$MVFI_ROOT/src/GIMM-VFI/configs/gimmvfi/gimmvfi_r_arb.yaml",
+  "arch_type": "gimmvfi_r",
+  "weights": [
+   {
+    "file": "$MVFI_ROOT/models/GIMM-VFI/raft-things.pth",
+    "url": "https://huggingface.co/GSean/GIMM-VFI/resolve/ab7735cdcfbd2e03c1bf2819380a25e8a4f321d1/raft-things.pth",
+    "bytes": 21108000,
+    "sha256": "fcfa4125d6418f4de95d84aec20a3c5f4e205101715a79f193243c186ac9a7e1",
+    "sha256_verified_at_load": true
+   },
+   {
+    "file": "$MVFI_ROOT/models/GIMM-VFI/gimmvfi_r_arb_lpips.pt",
+    "url": "https://huggingface.co/GSean/GIMM-VFI/resolve/ab7735cdcfbd2e03c1bf2819380a25e8a4f321d1/gimmvfi_r_arb_lpips.pt",
+    "bytes": 79308129,
+    "sha256": "b33e41536850594c01551978c4b63b1acd291c60d22310fbb6a4e57ac375033f",
+    "sha256_verified_at_load": true
+   }
+  ],
+  "checkpoint_weights_only_load": true,
+  "checkpoint_top_level_keys": [
+   "state_dict"
+  ],
+  "license": "S-Lab License 1.0 - non-commercial use only (text: src/GIMM-VFI/LICENSE). Bundled RAFT BSD-3, FlowFormer Apache-2.0, softsplat 'academic purposes only'. HF weights: no licence stated (assumed S-Lab 1.0).",
+  "license_file": "$MVFI_ROOT/src/GIMM-VFI/LICENSE",
+  "settings": {
+   "model_variant": "R-P",
+   "ds_factor": 0.25,
+   "pad": "replicate to multiple of 32",
+   "flow_iters": "RAFT 20 per direction (upstream fixed)",
+   "t_handling": "one forward per pair; all t share one bidirectional flow estimate",
+   "precision": "float32 end to end, no autocast",
+   "allow_tf32": false,
+   "flowformer_twins_imagenet_init": null
+  },
+  "runtime": {
+   "cupy": "12.3.0",
+   "nvrtc": "12.1",
+   "softsplat_backend": "upstream cupy.cuda.compile_with_cache",
+   "CUDA_HOME": "$MVFI_ROOT/env/gimmvfi",
+   "cudnn": 90100
+  }
+ },
+ "settings": {
+  "adapter": "$MVFI_ROOT/scripts/adapters/gimmvfi.py",
+  "input": "$MVFI_ROOT/input/test01_rec709",
+  "out_dir": "$MVFI_ROOT/output/test01/gimm-vfi/R-P_ds0.25_rec709",
+  "temporal_sf": 10,
+  "fps": 25.0,
+  "input_stride": 1,
+  "max_input_frames": null,
+  "adapter_arg": [
+   "model_variant=R-P",
+   "ds_factor=0.25"
+  ],
+  "write_workers": 8,
+  "cpu": false
+ },
+ "slurm": {
+  "SLURM_JOB_ID": "319417",
+  "SLURM_JOB_NODELIST": "ngpu02",
+  "CUDA_VISIBLE_DEVICES": "0"
+ },
+ "output_dir": "$MVFI_ROOT/output/test01/gimm-vfi/R-P_ds0.25_rec709"
+}

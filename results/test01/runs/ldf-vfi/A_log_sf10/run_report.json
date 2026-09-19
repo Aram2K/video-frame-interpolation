@@ -1,0 +1,167 @@
+{
+ "input": "$MVFI_ROOT/input/test01",
+ "input_files_used": 41,
+ "input_stride": 1,
+ "source_dtype": "uint16",
+ "width": 3840,
+ "height": 2160,
+ "model_input_frames": 41,
+ "temporal_sf": 10,
+ "output_frames": 401,
+ "input_duration_s_at_fps": 1.64,
+ "output_duration_s_at_fps": 16.04,
+ "expansion_factor": 9.78048780487805,
+ "fps": 25.0,
+ "vae_dtype": "bf16",
+ "dit_dtype": "bf16",
+ "pred_value_range_0_255": [
+  0.0,
+  233.583984375
+ ],
+ "paste_originals": true,
+ "anchor_psnr_db_mean": 45.519223690425875,
+ "anchor_psnr_db_min": 42.55344206653507,
+ "holdout_psnr_db_mean": null,
+ "timing_s": {
+  "model_load": 16.258639097213745,
+  "generation_and_write": 16187.638265609741,
+  "total": 16204.254138946533,
+  "sec_per_output_frame": 40.368175225959455,
+  "chunks": [
+   {
+    "frames": 40,
+    "seconds": 1207.477554321289
+   },
+   {
+    "frames": 20,
+    "seconds": 1569.7942728996277
+   },
+   {
+    "frames": 20,
+    "seconds": 3.7064414024353027
+   },
+   {
+    "frames": 20,
+    "seconds": 1568.1941738128662
+   },
+   {
+    "frames": 20,
+    "seconds": 3.679940700531006
+   },
+   {
+    "frames": 20,
+    "seconds": 1570.0243825912476
+   },
+   {
+    "frames": 20,
+    "seconds": 3.6600515842437744
+   },
+   {
+    "frames": 20,
+    "seconds": 1569.3078784942627
+   },
+   {
+    "frames": 20,
+    "seconds": 3.666553258895874
+   },
+   {
+    "frames": 20,
+    "seconds": 1569.094040632248
+   },
+   {
+    "frames": 20,
+    "seconds": 3.6388516426086426
+   },
+   {
+    "frames": 20,
+    "seconds": 1569.00488448143
+   },
+   {
+    "frames": 20,
+    "seconds": 3.6281750202178955
+   },
+   {
+    "frames": 20,
+    "seconds": 1569.041080236435
+   },
+   {
+    "frames": 20,
+    "seconds": 3.662243127822876
+   },
+   {
+    "frames": 20,
+    "seconds": 1569.9275131225586
+   },
+   {
+    "frames": 20,
+    "seconds": 3.639911651611328
+   },
+   {
+    "frames": 20,
+    "seconds": 1567.9004831314087
+   },
+   {
+    "frames": 20,
+    "seconds": 3.5701160430908203
+   },
+   {
+    "frames": 40,
+    "seconds": 824.2956082820892
+   }
+  ]
+ },
+ "gpu": {
+  "name": "NVIDIA H100 NVL",
+  "max_memory_allocated_gib": 56.863494873046875,
+  "max_memory_reserved_gib": 66.220703125
+ },
+ "software": {
+  "python": "3.11.9",
+  "torch": "2.5.1+cu124",
+  "torch_cuda": "12.4",
+  "cudnn": 90100,
+  "upstream_commit": "61b34d2379df8a313e8e4cb467cc2f74c52b45d7",
+  "upstream_changed_files": [],
+  "generate_py_sha256": "0b6bc71a7b02b8615c79bf6b99e93fe10a772cce6c891ed21f81e435b3952ff9"
+ },
+ "model": {
+  "model_path": "$MVFI_ROOT/models/LDF-VFI/transformer",
+  "vae_path": "$MVFI_ROOT/models/LDF-VFI/Wan2.1_VAE_cond_v2.pth",
+  "transformer_params": 1410465856,
+  "vae_params_each": 200222227
+ },
+ "settings": {
+  "input": "$MVFI_ROOT/input/test01",
+  "out_dir": "$MVFI_ROOT/output/test01/ldf-vfi/A_log_sf10",
+  "model_path": "$MVFI_ROOT/models/LDF-VFI/transformer",
+  "vae_path": "$MVFI_ROOT/models/LDF-VFI/Wan2.1_VAE_cond_v2.pth",
+  "temporal_sf": 10,
+  "fps": 25.0,
+  "input_stride": 1,
+  "max_input_frames": null,
+  "vae_dtype": "bf16",
+  "no_paste_originals": false,
+  "attention_type": "slide_chunk_all_block_2x1x1",
+  "temporal_upsample": "nearest",
+  "num_frames": 60,
+  "vae_batch_size": 16,
+  "tile_min_h": 256,
+  "tile_min_w": 256,
+  "tile_min_t": 20,
+  "tile_stride_h": 192,
+  "tile_stride_w": 192,
+  "sampling_steps": 16,
+  "t_shift": 8.0,
+  "t_cond": 0.1,
+  "seed": 42,
+  "write_workers": 8,
+  "fake_model": false
+ },
+ "slurm": {
+  "SLURM_JOB_ID": "320480",
+  "SLURM_JOB_NODELIST": "ngpu03",
+  "SLURM_JOB_PARTITION": "gpu",
+  "CUDA_VISIBLE_DEVICES": "0"
+ },
+ "output_dir": "$MVFI_ROOT/output/test01/ldf-vfi/A_log_sf10"
+}

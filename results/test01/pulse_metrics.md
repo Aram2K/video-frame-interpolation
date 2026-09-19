@@ -1,0 +1,14 @@
+Detail/grain ratio: generated vs genuine frames (1.0 = identical detail).
+Pulse ratio: frame-to-frame change next to a genuine frame vs between generated frames (1.0 = no pulse).
+
+| run | frames_analysed | sharpness_genuine | sharpness_generated | detail_ratio | grain_genuine | grain_generated | grain_ratio | step_adjacent_to_genuine | step_between_generated | pulse_ratio |
+|---|---|---|---|---|---|---|---|---|---|---|
+| bim-vfi/pyr7_sf10_rec709 | 61 | 0.017551 | 0.011081 | 0.631 | 0.00958 | 0.007095 | 0.741 | 0.02081 | 0.02147 | 0.969 |
+| bim-vfi/pyr7_sf10 | 61 | 0.003781 | 0.002326 | 0.615 | 0.004585 | 0.003302 | 0.72 | 0.0111 | 0.01127 | 0.984 |
+| vtinker/A_log | 61 | 0.003781 | 0.002116 | 0.56 | 0.004585 | 0.003453 | 0.753 | 0.01234 | 0.01056 | 1.169 |
+| vtinker/B_rec709 | 61 | 0.017551 | 0.008517 | 0.485 | 0.00958 | 0.006611 | 0.69 | 0.02303 | 0.01918 | 1.201 |
+| ldf-vfi/A_log_sf10 | 61 | 0.003781 | 0.001513 | 0.4 | 0.004585 | 0.002787 | 0.608 | 0.01132 | 0.00861 | 1.315 |
+| gimm-vfi/R-P_ds0.25 | 61 | 0.003781 | 0.000425 | 0.112 | 0.004585 | 0.001473 | 0.321 | 0.01061 | 0.00771 | 1.377 |
+| gimm-vfi/R-P_ds0.25_rec709 | 61 | 0.017551 | 0.001852 | 0.106 | 0.00958 | 0.003002 | 0.313 | 0.02024 | 0.01335 | 1.516 |
+| ema-vfi/ds025_rec709 | 61 | 0.017551 | 0.00017 | 0.01 | 0.00958 | 0.000794 | 0.083 | 0.01888 | 0.0072 | 2.622 |
+| ema-vfi/ds025 | 61 | 0.003781 | 3.5e-05 | 0.009 | 0.004585 | 0.000341 | 0.074 | 0.00993 | 0.0046 | 2.159 |
